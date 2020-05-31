@@ -48,7 +48,12 @@ summary%>%ggplot(aes(x=total))+
      geom_text(aes(x=round(mean(total)), label=paste("mean = ", round(mean(total),2)), y= 8.5), 
                color="red", angle=90, vjust = -1.5)+
      geom_text(aes(x=round(median(total)), label=paste("median = ", round(median(total),2)), y= 8.5), 
-               color="blue", angle=90, vjust = 2.5)
+               color="blue", angle=90, vjust = 2.5)+
+     ggsave("./instructions_fig/Plot1.png")
+```
+
+```
+## Saving 7 x 5 in image
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
@@ -62,7 +67,12 @@ Act%>%group_by(interval)%>% summarize(means=mean(steps, na.rm=TRUE))%>%ggplot(ae
      geom_text(aes(x=interval[which.max(means)], y=max(means), 
                    label=paste("Max = ", interval[which.max(means)], " min, ", round(max(means), 2), " steps !")), 
                color="red", hjust= -0.1)+
-     labs(x= "Interval in 5 min", y="Average steps")
+     labs(x= "Interval in 5 min", y="Average steps")+
+     ggsave("./instructions_fig/Plot2.png")
+```
+
+```
+## Saving 7 x 5 in image
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
@@ -91,7 +101,12 @@ summary2 %>% ggplot(aes(x=total))+
      geom_text(aes(x=round(mean(total)), label=paste("mean = ", round(mean(total),2)), y= 8.5), 
                color="red", angle=90, vjust = -1.5)+
      geom_text(aes(x=round(median(total)), label=paste("median = ", round(median(total),2)), y= 8.5), 
-               color="blue", angle=90, vjust = 2.5)
+               color="blue", angle=90, vjust = 2.5)+
+     ggsave("./instructions_fig/Plot3.png")
+```
+
+```
+## Saving 7 x 5 in image
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
@@ -106,7 +121,12 @@ Act3 %>%group_by(daygp, interval)%>%summarize(means=mean(steps, na.rm=TRUE))%>%
      ggplot(aes(interval, means))+
      geom_line()+
      facet_wrap(.~daygp, nrow=2)+
-     labs(x= "Interval in 5 min", y="Average steps")
+     labs(x= "Interval in 5 min", y="Average steps")+
+     ggsave("./instructions_fig/Plot4.png")
+```
+
+```
+## Saving 7 x 5 in image
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
